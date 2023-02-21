@@ -2,32 +2,26 @@
 Code and data associated with the paper "Detection and Mapping of Specular Surfaces Using Multibounce Lidar Returns" by Henley et al. 2022"
 
 ## Code 
-(see comments for more detailed descriptions):
+(see comments for more detailed descriptions)
 
 ### Raw Data Processing
-  ***batchProcessMirrorMultiBounce.m***
+***batchProcessMirrorMultiBounce.m***
+Driver script that batch processes raw photon count measurements (spot_XX.csv).  Outputs are data cubes as well as per-pixel maps of quanities like pixel-wise maps of detected pulse energy and peak timing bins for each laser scan direction (spot_XX.mat).
   
-  Driver script that batch processes raw photon count measurements (spot_XX.csv).  Outputs are data cubes as well as per-pixel maps of quanities like pixel-wise maps of detected pulse energy and peak timing bins for each laser scan direction (spot_XX.mat).
+***processRawCounts.m***
+From raw photon count measurement file (spot_XX.csv), outputs data cube for which photon counts are binned by time-of-arrival and detector scan angle.
   
-  ***processRawCounts.m***
-  
-  From raw photon count measurement file (spot_XX.csv), outputs data cube for which photon counts are binned by time-of-arrival and detector scan angle.
-  
-  ***datacubeStats.m***
-  
-  Using photon count data cube as input, outputs per-pixel maps of quantities such as per-pixel detected pulse energy and timing bin of detected peak.
+***datacubeStats.m***
+Using photon count data cube as input, outputs per-pixel maps of quantities such as per-pixel detected pulse energy and timing bin of detected peak.
     
 ### Spot Extraction
 ***processFrame.m***
-
 Reads in frame information, detects visibile specularities and output relevant properties, including spot energy, time-of-flight, and angle of arrival.
 
 ***spotDetector.m***
-
 Detects laser spots in data and extracts their angle of arrival and intensity (in photon counts).
  
 ***binDetector.m***
-
 Extracts times-of-flight associated with all detected laser spots.
 
 ### Specular surface mapping with single-beam illumination
@@ -57,6 +51,40 @@ Computes 3D points from detections.  Assumes all detected spots are one-bounce r
 
 ***naivePointCloudPlotter.m***
 Plots the point cloud generated using naiveMirrorGeometryScript.m.
+
+## Data
+
+***big_mirror/***
+Large mirror scan described in Section 4.2.1.
+
+***nothing_behind_window/***
+Planar window scan described in Section 4.2.2.  For this scan, no objects were placed behind the window
+
+***objects_behind_window/***
+Planar window scan described in Section 4.3.1.  The scene for this data collection was identical to the scene described in Section 4.2.2, except two objects were placed behind the window.
+
+***window_disambiguation_test/***
+Scan described in Section 4.3.2.  Scene was designed to exhaustively test the transparent surface processing logic described in Section 3.3
+
+***copper_pitcher/***
+Scan of non-planar copper pitcher described in Section 4.4.1
+
+***terrier/***
+Additional scan of a non-planar specular object.  The object was a chrome coated piggy bank that was shaped like a Boston Terrier.  The results from this data collection were not included in the text, but are provided here.
+
+***vase/***
+Scan of the thin transparent vase that was described in Section 4.4.2
+
+***big_mirror_multibeam/***
+Multi-beam scan of large mirror described in Section 4.5.  This dataset was created by summing the data cubes collected during the large mirror scan described in Section 4.2.1
+
+***window_multibeam/***
+Multi-beam scan of the planar window described in Section 4.5.  This dataset was created by summing the data cubes collected during the large mirror scan described in Section 4.2.2
+
+***replica/***
+This folder contains a replica of the instrument reponse function of the lidar system used for all experiments described in our paper.  It also contains bias tables which are required for proper estimation of return peak time-of-flight, as implemented in the script dataCubeStats.m.
+
+
                        
 
                
