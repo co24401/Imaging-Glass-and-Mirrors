@@ -1,3 +1,6 @@
+% Driver script that generates point cloud from measurements assuming that 
+% all detections correspond to one-bounce light transport paths.  
+
 data_dir = 'C:\Users\dolor\Remote-Flash\Experiments\window_disambiguation_test_031022\'; %'C:\Users\dolor\Remote-Flash\Experiments\window_collection_peepers_01822\';
 detections_file = 'geometry_mda_strictinbeam.mat'; %'test_window_tolerant_geometry.mat';
 savefile = 'naive_geometry';

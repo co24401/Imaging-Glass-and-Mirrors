@@ -3,7 +3,8 @@ function [X_0,X_0_record] = mirrorSourceFit(XoB, toB, X_0_init, t, epsilon, max_
 % Connor Henley
 % 3/4/2022
 %
-% Reads in dataCube and computes signal statistics on each histogram
+% Robustly localizaes the position of the mirrored source using a 
+% RANSAC algorithm.
 %
 % Inputs:
 % XoB = Set of out of beam (two-bounce) points (3xN)

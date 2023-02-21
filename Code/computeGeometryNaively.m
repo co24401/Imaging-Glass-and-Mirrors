@@ -3,8 +3,8 @@ function pD = computeGeometryNaively(detections, s)
 % Connor Henley
 % 3/5/2022
 %
-% Compute 3D points from detections.  Assumes all detected spots are 1B
-% returns.  Records whether or not the return is in the beam, however,
+% Computes 3D points from detections.  Assumes all detected spots are
+% one-bounce returns.  Records whether or not the return is in the beam.
 
 % Inputs:
 % detections = Structure that information about spots detected in

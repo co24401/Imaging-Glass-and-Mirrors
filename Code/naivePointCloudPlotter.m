@@ -3,7 +3,7 @@ function naivePointCloudPlotter(geometry, xlims, ylims, zlims)
 % Connor Henley
 % 3/5/2022
 %
-% Plot point cloud generated using naive_mirror_geometry_script
+% Plots the point cloud generated using naiveMirrorGeometryScript.m.
 
 figure; 
 for ii = 1:size(geometry.D, 2)

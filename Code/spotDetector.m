@@ -1,4 +1,5 @@
-%  Detects spatial locations of 1 bounce, 2 bounce, ..., n bounce returns.
+%  Detects laser spots in data and extracts their angle of arrival and 
+%  intensity (in photon counts).
 %
 % Inputs:
 %   E_img = 2D image of detected photon counts - dim(y, x)

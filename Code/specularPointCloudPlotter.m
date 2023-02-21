@@ -3,7 +3,8 @@ function specularPointCloudPlotter(geometry, xlims, ylims, zlims, n_scale)
 % Connor Henley
 % 3/11/2022
 %
-% Plot point cloud generated using MirrorGeometryScript
+% Plot point cloud generated using mirrorGeometryScript.m.  Points are 
+% colored by reflection type.
 
 if n_scale ~= 0
     plot_normals = true;

@@ -1,3 +1,8 @@
+% Driver script that batch processes raw photon count measurements 
+% (spot_XX.csv). Outputs are data cubes as well as per-pixel maps of 
+% quanities like pixel-wise maps of detected pulse energy and peak timing 
+% bins for each laser scan direction (spot_XX.mat).
+
 filedir = '.\Data\big_mirror_collection\';
 cscanfile =  '.\Data\big_mirror_collection\detector_scan_200x200.mat';
 replicafile = '.\Data\replica\replica.mat';
